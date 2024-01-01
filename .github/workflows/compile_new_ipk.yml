@@ -16,6 +16,13 @@ jobs:
       version: ${{ steps.version.outputs.version }}
       current_version: ${{ steps.current_version.outputs.version }}
     steps:
+      - name: init version file
+        run: |
+          mkdir ${{ github.ref_name }}
+          touch ./${{ github.ref_name }}/version
+          cd ${{ github.ref_name }}
+          ls -a
+
       - name: Clone Repository
         uses: actions/checkout@v4.1.1
         with:
@@ -24,6 +31,7 @@ jobs:
       - name: New Version
         id: version
         run: |
+          ls -a
           echo "version=$(grep 'PKG_VERSION:=' ./luci-app-openclash/Makefile |awk -F '=' '{print $2}')" >> $GITHUB_OUTPUT
           echo "New Version: $(grep 'PKG_VERSION:=' ./luci-app-openclash/Makefile |awk -F '=' '{print $2}')"
 
