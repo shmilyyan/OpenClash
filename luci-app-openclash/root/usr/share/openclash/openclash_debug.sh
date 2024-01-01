@@ -499,7 +499,7 @@ cat >> "$DEBUG_LOG" <<-EOF
 EOF
 
 if pidof clash >/dev/null; then
-   curl -k -sL -m 3 -H "Content-Type: application/json" -H "Authorization: Bearer ${da_password}" -XPATCH http://${lan_ip}:${cn_port}/configs -d '{"log-level": "debug"}'
+   curl -sLk -m 3 -H "Content-Type: application/json" -H "Authorization: Bearer ${da_password}" -XPATCH http://${lan_ip}:${cn_port}/configs -d '{"log-level": "debug"}'
    sleep 10
 fi
 tail -n 100 "/tmp/openclash.log" >> "$DEBUG_LOG" 2>/dev/null
@@ -509,7 +509,7 @@ cat >> "$DEBUG_LOG" <<-EOF
 
 EOF
 if pidof clash >/dev/null; then
-   curl -k -sL -m 3 -H "Content-Type: application/json" -H "Authorization: Bearer ${da_password}" -XPATCH http://${lan_ip}:${cn_port}/configs -d '{"log-level": "silent"}'
+   curl -sLk -m 3 -H "Content-Type: application/json" -H "Authorization: Bearer ${da_password}" -XPATCH http://${lan_ip}:${cn_port}/configs -d '{"log-level": "silent"}'
 fi
 
 cat >> "$DEBUG_LOG" <<-EOF
