@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: @v4.1.1
+    - uses: actions/checkout@v4.1.1
 
     # https://github.com/marketplace/actions/git-changesets
     - id: changed_files
