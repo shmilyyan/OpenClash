@@ -31,6 +31,7 @@ jobs:
       - name: New Version
         id: version
         run: |
+          ls -a
           echo "version=$(grep 'PKG_VERSION:=' ./luci-app-openclash/Makefile |awk -F '=' '{print $2}')" >> $GITHUB_OUTPUT
           echo "New Version: $(grep 'PKG_VERSION:=' ./luci-app-openclash/Makefile |awk -F '=' '{print $2}')"
 
