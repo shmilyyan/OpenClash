@@ -20,6 +20,8 @@ jobs:
         run: |
           mkdir ${{ github.ref_name }}
           touch ./${{ github.ref_name }}/version
+          ls -a
+
       - name: Clone Repository
         uses: actions/checkout@v4.1.1
         with:
