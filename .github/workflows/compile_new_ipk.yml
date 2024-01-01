@@ -17,7 +17,7 @@ jobs:
       current_version: ${{ steps.current_version.outputs.version }}
     steps:
       - name: Clone Repository
-        uses: actions/checkout@v3
+        uses: @v4.1.1
         with:
           ref: ${{ github.ref_name }}
 
@@ -28,7 +28,7 @@ jobs:
           echo "New Version: $(grep 'PKG_VERSION:=' ./luci-app-openclash/Makefile |awk -F '=' '{print $2}')"
 
       - name: Clone Repository
-        uses: actions/checkout@v3
+        uses: @v4.1.1
         with:
           ref: package
 
@@ -44,7 +44,7 @@ jobs:
     if: ${{ needs.Get-Version.outputs.version != needs.Get-Version.outputs.current_version }}
     steps:
       - name: Clone OpenClash dev Repository
-        uses: actions/checkout@v3
+        uses: @v4.1.1
         with:
           ref: ${{ github.ref_name }}
 
@@ -85,7 +85,7 @@ jobs:
           make package/luci-app-openclash/compile V=99
 
       - name: Switch OpenClash Repository to Package
-        uses: actions/checkout@v3
+        uses: @v4.1.1
         with:
           ref: package
 
