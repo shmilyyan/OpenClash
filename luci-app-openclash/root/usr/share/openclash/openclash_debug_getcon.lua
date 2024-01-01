@@ -31,7 +31,7 @@ local function debug_getcon()
 	local port = uci:get("openclash", "config", "cn_port")
 	local passwd = uci:get("openclash", "config", "dashboard_password") or ""
 	if ip and port then
-		info = luci.sys.exec(string.format('curl -k -sL -m 3 -H "Content-Type: application/json" -H "Authorization: Bearer %s" -XGET http://"%s":"%s"/connections', passwd, ip, port))
+		info = luci.sys.exec(string.format('curl -sLk -m 3 -H "Content-Type: application/json" -H "Authorization: Bearer %s" -XGET http://"%s":"%s"/connections', passwd, ip, port))
 		if info then
 			info = json.parse(info)
 		end
