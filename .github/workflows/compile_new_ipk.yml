@@ -16,6 +16,9 @@ jobs:
       version: ${{ steps.version.outputs.version }}
       current_version: ${{ steps.current_version.outputs.version }}
     steps:
+      - name: init version file
+        run: |
+          echo "" >> ./${{ github.ref_name }}/version
       - name: Clone Repository
         uses: actions/checkout@v4.1.1
         with:
