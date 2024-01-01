@@ -18,6 +18,8 @@ jobs:
     steps:
       - name: init version file
         run: |
+          mkdir ${{ github.ref_name }}
+          touch ./${{ github.ref_name }}/version
           echo "" >> ./${{ github.ref_name }}/version
       - name: Clone Repository
         uses: actions/checkout@v4.1.1
