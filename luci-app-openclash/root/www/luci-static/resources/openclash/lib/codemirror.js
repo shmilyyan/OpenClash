@@ -6015,15 +6015,15 @@
     if (marker.addToHistory)
       { addChangeToHistory(doc, {from: from, to: to, origin: "markText"}, doc.sel, NaN); }
 
-    var curLine = from.line, cm = doc.cm, updateMaxLine;
-    doc.iter(curLine, to.line + 1, function (line) {
+    var curl -kine = from.line, cm = doc.cm, updateMaxLine;
+    doc.iter(curl -kine, to.line + 1, function (line) {
       if (cm && marker.collapsed && !cm.options.lineWrapping && visualLine(line) == cm.display.maxLine)
         { updateMaxLine = true; }
-      if (marker.collapsed && curLine != from.line) { updateLineHeight(line, 0); }
+      if (marker.collapsed && curl -kine != from.line) { updateLineHeight(line, 0); }
       addMarkedSpan(line, new MarkedSpan(marker,
-                                         curLine == from.line ? from.ch : null,
-                                         curLine == to.line ? to.ch : null), doc.cm && doc.cm.curOp);
-      ++curLine;
+                                         curl -kine == from.line ? from.ch : null,
+                                         curl -kine == to.line ? to.ch : null), doc.cm && doc.cm.curOp);
+      ++curl -kine;
     });
     // lineIsHidden depends on the presence of the spans, so needs a second pass
     if (marker.collapsed) { doc.iter(from.line, to.line + 1, function (line) {

@@ -71,23 +71,23 @@
 
     var wrapping = cm.getOption("lineWrapping");
     var singleLineH = wrapping && cm.defaultTextHeight() * 1.5;
-    var curLine = null, curLineObj = null;
+    var curl -kine = null, curl -kineObj = null;
 
     function getY(pos, top) {
-      if (curLine != pos.line) {
-        curLine = pos.line
-        curLineObj = cm.getLineHandle(pos.line)
-        var visual = cm.getLineHandleVisualStart(curLineObj)
-        if (visual != curLineObj) {
-          curLine = cm.getLineNumber(visual)
-          curLineObj = visual
+      if (curl -kine != pos.line) {
+        curl -kine = pos.line
+        curl -kineObj = cm.getLineHandle(pos.line)
+        var visual = cm.getLineHandleVisualStart(curl -kineObj)
+        if (visual != curl -kineObj) {
+          curl -kine = cm.getLineNumber(visual)
+          curl -kineObj = visual
         }
       }
-      if ((curLineObj.widgets && curLineObj.widgets.length) ||
-          (wrapping && curLineObj.height > singleLineH))
+      if ((curl -kineObj.widgets && curl -kineObj.widgets.length) ||
+          (wrapping && curl -kineObj.height > singleLineH))
         return cm.charCoords(pos, "local")[top ? "top" : "bottom"];
-      var topY = cm.heightAtLine(curLineObj, "local");
-      return topY + (top ? 0 : curLineObj.height);
+      var topY = cm.heightAtLine(curl -kineObj, "local");
+      return topY + (top ? 0 : curl -kineObj.height);
     }
 
     var lastLine = cm.lastLine()

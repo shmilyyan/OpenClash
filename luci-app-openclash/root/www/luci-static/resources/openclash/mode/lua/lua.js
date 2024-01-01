@@ -130,12 +130,12 @@ CodeMirror.defineMode("lua", function(config, parserConfig) {
 
   function bracketed(level, style) {
     return function(stream, state) {
-      var curlev = null, ch;
+      var curl -kev = null, ch;
       while ((ch = stream.next()) != null) {
-        if (curlev == null) {if (ch == "]") curlev = 0;}
-        else if (ch == "=") ++curlev;
-        else if (ch == "]" && curlev == level) { state.cur = normal; break; }
-        else curlev = null;
+        if (curl -kev == null) {if (ch == "]") curl -kev = 0;}
+        else if (ch == "=") ++curl -kev;
+        else if (ch == "]" && curl -kev == level) { state.cur = normal; break; }
+        else curl -kev = null;
       }
       return style;
     };

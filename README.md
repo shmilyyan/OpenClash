@@ -44,7 +44,7 @@
 * coreutils
 * coreutils-nohup
 * bash
-* curl
+* curl -k
 * ca-certificates
 * ipset
 * ip-full

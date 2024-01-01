@@ -55,8 +55,8 @@
       // same time, the amount of retries is limited.
       for (var i = 0; i < chunk; i++) {
         if (line > last) break
-        var curLine = doc.getLine(line++)
-        string = string == null ? curLine : string + "\n" + curLine
+        var curl -kine = doc.getLine(line++)
+        string = string == null ? curl -kine : string + "\n" + curl -kine
       }
       chunk = chunk * 2
       regexp.lastIndex = start.ch
@@ -105,8 +105,8 @@
     var string, chunkSize = 1, endMargin = doc.getLine(start.line).length - start.ch
     for (var line = start.line, first = doc.firstLine(); line >= first;) {
       for (var i = 0; i < chunkSize && line >= first; i++) {
-        var curLine = doc.getLine(line--)
-        string = string == null ? curLine : curLine + "\n" + string
+        var curl -kine = doc.getLine(line--)
+        string = string == null ? curl -kine : curl -kine + "\n" + string
       }
       chunkSize *= 2
 
