@@ -21,7 +21,7 @@ local function debug_dns()
 	local passwd = uci:get("openclash", "config", "dashboard_password") or ""
 
 	if datatype.hostname(addr) and ip and port then
-		info = luci.sys.exec(string.format('curl -k -sL -m 3 -H "Content-Type: application/json" -H "Authorization: Bearer %s" -XGET http://"%s":"%s"/dns/query?name="%s"', passwd, ip, port, addr))
+		info = luci.sys.exec(string.format('curl -sLk -m 3 -H "Content-Type: application/json" -H "Authorization: Bearer %s" -XGET http://"%s":"%s"/dns/query?name="%s"', passwd, ip, port, addr))
 		if info then
 			info = json.parse(info)
 		end
