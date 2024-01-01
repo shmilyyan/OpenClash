@@ -23,7 +23,7 @@ jobs:
     # https://github.com/marketplace/actions/git-changesets
     - id: changed_files
       name: git-changesets
-      uses: collin-miller/git-changesets@v0.0.4
+      uses: collin-miller/git-changesets@v1
       with:
           # Default format is 'csv'. Other valid options are 'space-delimited' and 'json'.
           format: space-delimited
